@@ -20,7 +20,7 @@ Link examples:
          @GetMapping("/404")
          public String method404(HttpServletResponse response) {
               response.setStatus(404);
-              return "fake!";
+              return "Test";
          }
   }
 ```
