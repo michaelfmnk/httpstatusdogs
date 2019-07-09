@@ -12,5 +12,30 @@ Link examples:
  - https://httpstatusdogs.com/img/500.jpg
  - etc.
  
+ ##### Example
+ 
+```java
+  @RestController
+  class FakeController {
+         @GetMapping("/404")
+         public String method404(HttpServletResponse response) {
+              response.setStatus(404);
+              return "fake!";
+         }
+  }
+```
+  For the given RestController response will be:
+  
+  ```http request
+HTTP/1.1 404 
+StatusDog: https://httpstatusdogs.com/img/404.jpg
+Content-Type: text/plain;charset=UTF-8
+Content-Length: 5
+Date: Tue, 09 Jul 2019 20:42:44 GMT
+
+Test
+``` 
+
+ 
 
  All images are provided by [HttpStatusDogs](https://httpstatusdogs.com)
