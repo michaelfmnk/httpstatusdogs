@@ -1,31 +1,31 @@
-package com.michaelfmnk.httpstatusdogs;
+package dev.fomenko.httpstatusdogs;
 
 import io.restassured.RestAssured;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = FakeControllerApplication.class)
 public class HttpStatusDogsApplicationTests {
 
     @LocalServerPort
     private int port;
 
-    @Before
+    @BeforeEach
     public void setup() {
         RestAssured.port = port;
     }
 
     @Test
     public void shouldLoadContext() {
-        Assert.assertTrue(true);
+        Assertions.assertTrue(true);
     }
 
     @Test

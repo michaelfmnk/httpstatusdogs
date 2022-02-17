@@ -1,6 +1,6 @@
-package com.michaelfmnk.httpstatusdogs.config;
+package dev.fomenko.httpstatusdogs.config;
 
-import com.michaelfmnk.httpstatusdogs.HttpDogControllerAdvice;
+import dev.fomenko.httpstatusdogs.HttpDogControllerAdvice;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

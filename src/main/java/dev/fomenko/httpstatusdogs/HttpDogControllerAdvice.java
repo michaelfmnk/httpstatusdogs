@@ -1,4 +1,4 @@
-package com.michaelfmnk.httpstatusdogs;
+package dev.fomenko.httpstatusdogs;
 
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
