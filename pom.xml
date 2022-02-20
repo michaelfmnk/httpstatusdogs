@@ -16,7 +16,35 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <version.plugin.javadoc>3.3.2</version.plugin.javadoc>
+        <version.plugin.source>3.2.0</version.plugin.source>
+        <version.maven.compiler>3.7.0</version.maven.compiler>
     </properties>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Mykhailo Fomenko</name>
+            <email>michael.fmnk@gmail.com</email>
+            <url>https://fomenko.dev</url>
+            <roles>
+                <role>Owner</role>
+                <role>Developer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/michaelfmnk/httpstatusdogs.git</connection>
+        <developerConnection>scm:git:ssh://github.com:michaelfmnk/httpstatusdogs.git</developerConnection>
+        <url>http://github.com/michaelfmnk/httpstatusdogs</url>
+    </scm>
 
     <dependencies>
         <dependency>
@@ -54,38 +82,39 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.7.0</version>
+                <version>${version.maven.compiler}</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${version.plugin.javadoc}</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>${version.plugin.source}</version>
+                <executions>
+                    <execution>
+                        <id>attach-source</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
-
-    <licenses>
-        <license>
-            <name>MIT License</name>
-            <url>http://www.opensource.org/licenses/mit-license.php</url>
-        </license>
-    </licenses>
-
-    <developers>
-        <developer>
-            <name>Mykhailo Fomenko</name>
-            <email>michael.fmnk@gmail.com</email>
-            <url>https://fomenko.dev</url>
-            <roles>
-                <role>Owner</role>
-                <role>Developer</role>
-            </roles>
-        </developer>
-    </developers>
-
-    <scm>
-        <connection>scm:git:git://github.com/michaelfmnk/httpstatusdogs.git</connection>
-        <developerConnection>scm:git:ssh://github.com:michaelfmnk/httpstatusdogs.git</developerConnection>
-        <url>http://github.com/michaelfmnk/httpstatusdogs</url>
-    </scm>
 
 </project>
