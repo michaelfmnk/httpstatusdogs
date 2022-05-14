@@ -1,4 +1,5 @@
-#### HttpStatusDogs - Spring starter that provides a perfect description for your server's responses
+# HttpStatusDogs
+### Spring starter that provides a perfect description for your server's responses
 
 ---
 [![Build Status](https://travis-ci.org/michaelfmnk/httpstatusdogs.svg?branch=master)](https://travis-ci.org/michaelfmnk/httpstatusdogs) 
@@ -12,8 +13,25 @@ Link examples:
  - https://httpstatusdogs.com/img/500.jpg
  - etc.
  
- ##### Example
+ ### Usage
  
+To start using HttpStatusDogs, just include the following dependency in your `build.gradle`
+```groovy
+implementation 'dev.fomenko:httpstatusdogs:1.0.0'
+```
+
+or `pom.xml` file:
+```xml
+
+ <dependency>
+    <groupId>dev.fomenko</groupId>
+    <artifactId>httpstatusdogs</artifactId>
+    <version>1.0.0</version>
+ </dependency>
+```
+
+### Example
+
 ```java
   @RestController
   class FakeController {
@@ -26,7 +44,7 @@ Link examples:
 ```
   For the given RestController response will be:
   
-  ```http request
+```http request
 HTTP/1.1 404 
 StatusDog: https://httpstatusdogs.com/img/404.jpg
 Content-Type: text/plain;charset=UTF-8
