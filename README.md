@@ -1,4 +1,4 @@
-# HttpStatusDogs
+# HttpStatusDogs 🐶
 ### Spring starter that provides a perfect description for your server's responses
 
 ---
